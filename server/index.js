@@ -11,23 +11,23 @@ app.get('/', (req, res) => {
 
 app.get('/api/weather/:city', async(req, res)=>{
     try{
-        const city = req.params.city;
+        const city = req.params.city.trim();
         if (!city) {
             return res.status(400).json({ error: "City is required" });
         }
-        let response = await fetch(
+        const response = await fetch(
             `${process.env.URL}?q=${city}&appid=${process.env.API_KEY}&units=metric`
         );
         if(!response.ok){
             return res.status(response.status).json({error: response.statusText});
         }
 
-        let data = await response.json();
+        const data = await response.json();
         if(data.cod!==200 && data.cod!=="200"){
             return res.status(data.cod).json({error: data.message});
         }
 
-        let weatherData = {
+        const weatherData = {
             location: {
                 city: data.name,
                 country: data.sys.country
