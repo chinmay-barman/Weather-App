@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar'
 import Location from './components/Location'
 import Temperature from './components/Temperature'
 import ExtraInfo from './components/ExtraInfo'
+import Map from './components/Map'
 function App() {
   const [city, setCity] = useState('kolkata')
   const [location, setLocation] = useState({});
@@ -35,7 +36,8 @@ function App() {
         <SearchBar setCity = {setCity}/>
         <Location location={location}/>
         <Temperature temperature={temperature} humidity={humidity}/>
-        <ExtraInfo windSpeed={windSpeed} clouds={clouds}/>
+        <ExtraInfo windSpeed={windSpeed} clouds={clouds} weather={weather}/>
+        <Map city={city}/>
       </div>
     </>
   )
