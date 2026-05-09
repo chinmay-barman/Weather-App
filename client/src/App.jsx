@@ -31,14 +31,14 @@ function App() {
 
   return(
     <>
-      <div>
+      <main className="appShell">
         <Header/>
         <SearchBar setCity = {setCity}/>
         <Location location={location}/>
-        <Temperature temperature={temperature} humidity={humidity}/>
+        <Temperature temperature={temperature} humidity={humidity} weather={weather}/>
         <ExtraInfo windSpeed={windSpeed} clouds={clouds} weather={weather}/>
         <Map city={city}/>
-      </div>
+      </main>
     </>
   )
 }

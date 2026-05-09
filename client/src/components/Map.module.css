@@ -1,8 +1,10 @@
 .map{
-    margin: 20px;
+    margin: 0;
 }
 .map iframe{
     width: 100%;
     border: 2px solid #ccc;
     border-radius: 20px;
+
+    box-shadow: 0px 5px 25px 1px rgba(139, 113, 255, 0.65);
 }

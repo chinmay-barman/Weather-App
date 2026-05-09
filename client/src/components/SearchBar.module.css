@@ -1,5 +1,5 @@
 .searchBar{
-    margin: 20px;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
@@ -8,9 +8,9 @@
     height: 45px;
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0px 0px 5px 5px rgb(108, 171, 239);
     grid-template-columns: repeat(6,1fr) auto;
-    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    background: transparent;
+    box-shadow: 0px 2px 20px 5px rgb(161, 141, 251);
 }
 .searchBar form input{
     grid-column: 1/7;
@@ -20,11 +20,32 @@
     border-radius: 20px;
     background-color: transparent;
 }
+.searchBar form input:focus{
+    outline: none;
+    box-shadow: inset 0px 0px 8px 1px rgba(108, 171, 239, 0.75);
+}
 .searchBar form button{
     height: 45px;
     width: 45px;
+
     border: none;
     border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     box-shadow: 0px 0px 5px 1px rgb(108, 171, 239);
     background-color: transparent;
+    color: rgb(108, 171, 239);
+}
+.searchBar form button:hover{
+    box-shadow: 0px 0px 10px 2px rgb(108, 171, 239);
+    background-color: transparent;
+    color: rgb(68, 133, 232);
+}
+.searchIcon{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
 }
